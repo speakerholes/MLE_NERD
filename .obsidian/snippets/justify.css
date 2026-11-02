@@ -1,0 +1,12 @@
+
+/* Justify text in Reading Mode */
+.markdown-preview-view p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Justify text in Live Preview / Editing Mode */
+.cm-line:not(.cm-header) {
+    text-align: justify;
+    text-justify: inter-word;
+}
