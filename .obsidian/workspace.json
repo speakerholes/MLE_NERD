@@ -83,7 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 285.5
   },
   "right": {
     "id": "c5f8448a24d428ce",
@@ -191,11 +191,11 @@
   "active": "69a6e4076c8be130",
   "lastOpenFiles": [
     "Excalidraw/brute-force-ad-recommendation.excalidraw.md",
+    "g.md",
     "Guides/ML System Design --- Real-time AD recommendation with Transformers at Scale.md",
     "Excalidraw",
     "Drawings/Untitled.md",
     "Drawings",
-    "Untitled.md",
     "Guides"
   ]
 }

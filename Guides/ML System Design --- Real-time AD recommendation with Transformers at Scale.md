@@ -20,3 +20,4 @@ Lets imagine that the model takes about 20ms to score a single ad. That means fo
 One day we get a huge influx in businesses wanting our service to serve their ads. We now have 1000 ads to serve. Now at our current model runtime it would take around 20 seconds to serve an ad to a user. Your first thought might be to optimize the model more but even if you were to bring the model down to 1ms we still wouldn't be able to handle more scale. If we scaled to 1 million ads our brute force system would take approximately 20,000 seconds. As we can see this is note a scalable solution and you would be looking in the wrong place if you think optimizing the model is the best way to accomplish a scalable system. 
 
 
+
