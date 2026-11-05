@@ -15,9 +15,27 @@ Lets first get a visual understanding of what brute-force may look like:
 
 ![[brute-force-ad-recommendation.excalidraw|center|700]]
 
-Lets imagine that the model takes about 20ms to score a single ad. That means for this diagram that it would take us 100ms to score all five ads. Lets start to think in terms of scale. 
+The diagram above shows our starting design. Before discussing its bottlenecks, let’s walk through how training and inference work.
+### Training
+1. Read historical training data from storage.
+2. Process the data into the features and labels needed for training.
+3. Train the ranking model on the processed data.
+4. Save the model artifact so the serving service can load it for inference.
+### Inference
+1. Receive a request to recommend an ad to a user.
+2. Retrieve the user’s stored information and build their features.
+3. Load all eligible ads and their features.
+4. Use the loaded model to score each eligible ad using user, ad, and request features.
+5. Select the highest-scoring ad and return it to the user.
 
-One day we get a huge influx in businesses wanting our service to serve their ads. We now have 1000 ads to serve. Now at our current model runtime it would take around 20 seconds to serve an ad to a user. Your first thought might be to optimize the model more but even if you were to bring the model down to 1ms we still wouldn't be able to handle more scale. If we scaled to 1 million ads our brute force system would take approximately 20,000 seconds. As we can see this is note a scalable solution and you would be looking in the wrong place if you think optimizing the model is the best way to accomplish a scalable system. 
+# Growth Dimensions
+
+There are many areas that our system can grow. 
+- Requests per second
+- Eligible ads per request
+- User history length
+- Model size
+- Training examples
 
 
 
