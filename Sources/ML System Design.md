@@ -7,5 +7,6 @@
 
 
 
+## Future Reads
 
-
+- [Scaling User Modeling: Large-scale Online User Representations for Ads Personalization in Meta](https://arxiv.org/abs/2311.09544) Meta, 2024, Framework for sharing user representation across hundreds of production models via asynchronous inference. 
