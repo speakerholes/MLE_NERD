@@ -41,6 +41,9 @@ There are many areas that our system can grow.
 
 Within the bruteforce diagram there is a box that is scoring every ad.  If we peer into the box we will see there is a model that encodes the user feature history. We could possible have multiple requests from that same user and also that for each ad we have to recompute these user feature over and over again. This is a clear area for optimization. 
 
+A common method is to create an upstream model that is larger and more accurate way to create user embeddings from the user history. We will not have to score everytime. What we will be able to do is run these in batch which tends to be quite efficient and then store the data in a feature store. 
+
+A small win when storing embeddings is to create a process before storing that [[quantizes]] the embeddings. 
 
 
 
